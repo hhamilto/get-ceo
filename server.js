@@ -36,9 +36,9 @@ app.get('/about', function(req, res){
 	res.send('This api just scrapes the bloomberg site and presents the info in a better way. ');
 });
 
-module.exports.start = function(){
-	app.listen(3000);
-	console.log("Server listening on port 3000");
+module.exports.listen = function(options){
+	app.listen(options.host, options.port);
+	console.log("Server listening on "+options.host+":"+options.port);
 }
 
 _.bindAll(module.exports)
